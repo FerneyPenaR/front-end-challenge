@@ -1,0 +1,36 @@
+{
+    "app": {
+        "title": "Reservar boletos",
+        "changeLanguage": "Cambiar idioma"
+    },
+    "booking": {
+        "title": "Reservar boletos",
+        "list": "Lista de boletos reservados",
+        "columns": {
+            "id": "ID",
+            "destination": "Destino",
+            "origin": "Origen",
+            "passengers": "Número de Pasajeros",
+            "datetime": "Horario"
+        },
+        "actions": "Acciones",
+        "saveTitle": "Confirmar agendamiento",
+        "saveMessage": "¿Desea confirmar esta reserva?",
+        "showTitle": "Agenda",
+        "showMessage": "Esta es la agenda de su reserva",
+        "deleteTitle": "Confirmar Eliminación",
+        "deleteMessage": "¿Desea eliminar esta reserva?"
+    },
+    "actions": {
+        "save": "Guardar",
+        "show": "Mostrar",
+        "delete": "Eliminar",
+        "book": "Agendar",
+        "accept": "Aceptar",
+        "cancel": "Cancelar"
+    },
+    "messages": {
+        "saveSuccessfuly": "Guardado con éxito",
+        "deletesuccessfuly": "Eliminado con éxito"
+    }
+}

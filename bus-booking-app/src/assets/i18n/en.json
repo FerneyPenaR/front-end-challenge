@@ -1,0 +1,36 @@
+{
+    "app": {
+        "title": "Book Bus Tickets",
+        "changeLanguage": "Change Language"
+    },
+    "booking": {
+        "title": "Book Bus Tickets",
+        "list": "Booked Tickes",
+        "columns": {
+            "id": "ID",
+            "destination": "Destination",
+            "origin": "Origin",
+            "passengers": "Passengers",
+            "datetime": "Datetime"
+        },
+        "actions": "Actions",
+        "saveTitle": "Confirm Booking",
+        "saveMessage": "Do you want to confirm the booking?",
+        "showTitle": "Booking",
+        "showMessage": "This are your booking details",
+        "deleteTitle": "Delete confirm",
+        "deleteMessage": "Do you want to delete this booking?"
+    },
+    "actions": {
+        "save": "Save",
+        "show": "Show",
+        "delete": "Delete",
+        "book": "Book",
+        "accept": "Confirm",
+        "cancel": "Cancel"
+    },
+    "messages": {
+        "saveSuccessfuly": "Saved successfuly",
+        "deletesuccessfuly": "Deleted successfuly"
+    }
+}

@@ -1,0 +1,26 @@
+<h1 mat-dialog-title>{{ data.title }}</h1>
+<div mat-dialog-content>
+    <p>{{ data.message }}</p>
+    <div *ngIf="data.booking">
+        <div class="section">
+            <b class="title">{{ 'booking.columns.origin' | transloco }}: </b>
+            <label class="value">{{ data.booking.origin }}</label>
+        </div>
+        <div class="section">
+            <b class="title">{{ 'booking.columns.destination' | transloco }}: </b>
+            <label class="value">{{ data.booking.destination }}</label>
+        </div>
+        <div class="section">
+            <b class="title">{{ 'booking.columns.passengers' | transloco }}: </b>
+            <label class="value">{{ data.booking.passengers }}</label>
+        </div>
+        <div class="section">
+            <b class="title">{{ 'booking.columns.datetime' | transloco }}: </b>
+            <label class="value">{{ data.booking.datetime | date: 'MM/dd/yyy hh:mm' }}</label>
+        </div>
+    </div>
+</div>
+<div mat-dialog-actions>
+    <button mat-flat-button color="primary" [mat-dialog-close]="true">{{ 'actions.accept' | transloco }}</button>
+    <button mat-flat-button *ngIf="data.showCancel" (click)="closeDialog()">{{ 'actions.cancel' | transloco }}</button>
+</div>

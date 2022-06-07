@@ -1,0 +1,78 @@
+<div class="container">
+  <div class="header">
+    <h1>{{ "booking.list" | transloco }}</h1>
+  </div>
+
+  <div class="list">
+    <mat-table [dataSource]="bookingList" class="mat-elevation-z8">
+      <!-- id Column -->
+      <ng-container matColumnDef="id">
+        <mat-header-cell *matHeaderCellDef>
+          {{ "booking.columns.id" | transloco }}
+        </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{ element.id }} </mat-cell>
+      </ng-container>
+
+      <!-- origin Column -->
+      <ng-container matColumnDef="origin">
+        <mat-header-cell *matHeaderCellDef>
+          {{ "booking.columns.origin" | transloco }}
+        </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{ element.origin }} </mat-cell>
+      </ng-container>
+
+      <!-- destination Column -->
+      <ng-container matColumnDef="destination">
+        <mat-header-cell *matHeaderCellDef>
+          {{ "booking.columns.destination" | transloco }}
+        </mat-header-cell>
+        <mat-cell *matCellDef="let element">
+          {{ element.destination }}
+        </mat-cell>
+      </ng-container>
+
+      <!-- passengers Column -->
+      <ng-container matColumnDef="passengers">
+        <mat-header-cell *matHeaderCellDef>
+          {{ "booking.columns.passengers" | transloco }}
+        </mat-header-cell>
+        <mat-cell *matCellDef="let element">
+          {{ element.passengers }}
+        </mat-cell>
+      </ng-container>
+
+      <!-- datetime Column -->
+      <ng-container matColumnDef="datetime">
+        <mat-header-cell *matHeaderCellDef>
+          {{ "booking.columns.datetime" | transloco }}
+        </mat-header-cell>
+        <mat-cell *matCellDef="let element">
+          {{ element.datetime | date: "MM/dd/yyy hh:mm" }}
+        </mat-cell>
+      </ng-container>
+
+      <!-- actions Column -->
+      <ng-container matColumnDef="actions">
+        <mat-header-cell *matHeaderCellDef>
+          {{ "booking.actions" | transloco }}
+        </mat-header-cell>
+        <mat-cell *matCellDef="let element">
+          <button mat-icon-button color="primary" matTooltip="{{ 'actions.show' | transloco }}" (click)="showBooking(element)">
+            <mat-icon>visibility</mat-icon>
+          </button>
+          <button mat-icon-button color="primary" matTooltip="{{ 'actions.delete' | transloco }}" (click)="deleteBookingConfirmation(element)">
+            <mat-icon>delete</mat-icon>
+          </button>
+        </mat-cell>
+      </ng-container>
+
+      <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+      <mat-row *matRowDef="let row; columns: displayedColumns"></mat-row>
+    </mat-table>
+  </div>
+  <div class="button-container">
+    <button mat-flat-button color="primary" matTooltip="{{ 'actions.book' | transloco }}" (click)="createBooking()">
+      <mat-icon>add</mat-icon>
+    </button>
+  </div>
+</div>

@@ -1,0 +1,22 @@
+<mat-toolbar color="primary">
+    <a href="/" [matTooltip]="'app.title' | transloco" class="icon-title">
+      <mat-icon aria-hidden="false" aria-label="home icon">home</mat-icon>
+    </a>
+  <div class="nav-bar-pages">
+    <div class="page" *ngFor="let page of pages;" 
+        [matTooltip]="page.tooltip  | transloco"  
+        matTooltipPosition="right" 
+        matTooltipClass="tooltip-nav-bar">
+      <a [routerLink]="page.path" class="route-link" 
+      routerLinkActive="is-active" (click)="setTitle(page.tooltip)">
+        <span>{{ page.tooltip | transloco }}</span>
+      </a>
+    </div>
+  </div>
+  <span class="toolbar-spacer"></span>
+  <div class="languages" matTooltip="{{ 'app.changeLanguage' | transloco }}">
+    <a [ngClass]="{'selected': currentLanguage === 'es'}" (click)="changeLanguage('es')">ES</a>
+    <span> | </span>
+    <a [ngClass]="{'selected': currentLanguage === 'en'}" (click)="changeLanguage('en')">EN</a>
+  </div>
+</mat-toolbar>
